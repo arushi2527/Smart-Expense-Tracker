@@ -8,8 +8,10 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 export default function App({ Component, pageProps }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <AuthUserProvider>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AuthUserProvider>
     </LocalizationProvider>);
 }
